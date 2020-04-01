@@ -575,18 +575,24 @@ a
 a
 a
 """
+def Input():
+    MusicPlay("Click"+"()"+"0.0")
+    audio = GetVoice()
+    MusicPlay("WaitAna"+"()"+"0.0")
+    text= AnalyseVoice(audio)
+    return text
 def covid_19_diagonsis():
     score=0
     questions=["آیا لزر شدید دارید","آیا تب بالای ۳۸ درجه دارید","آیا در چند روز اخیر سرفه شدید دارید","آیا احساس گلودرد شدید دارید","آیا آسم و یا برونشیت دارید","آیا فشار خون شما بالاست","آیا دیابت داشته و با وجود تزریق انسولین هنوز عوارض دارید","آیا در شیمی درمانی به سر می برید","آیا کسی از نزدیکان شما به بیماری مبتلا شده","آیا تنگی نفس بسیار بالا دارید","آیا بینی شما کیپ است"]
     for question in questions:
-        print(question)
-        inp=input()
+        TTS(question)
+        inp=Input()
         if inp=="بله":
             score+=1
         else:
             score-=1
     if score>=3:
-        print("نیاز به بررسی دارید")
+        TTS("نیاز به بررسی دارید")
     else:
-        print("شما کاملا سالم هستید")
+        TTS("شما کاملا سالم هستید")
 covid_19_diagonsis()
