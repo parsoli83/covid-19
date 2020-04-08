@@ -6,15 +6,19 @@ def reverse_True_and_False():
         Ind=random.randint(0,len(list_questions)-1)
         TTS(list_questions[Ind],"fa")
         iinput=CompleteVoiceAnalyse()
-        if iinput=="بله":
+        if iinput=="بله" or iinput=="آره":
             if key[Ind]=="y":
                 TTS("درسته","fa")
             else:
                 TTS("غلطه","fa")
-        if iinput=="خیر":
+        elif iinput=="خیر" or iinput=="نه":
             if key[Ind]=="n":
                 TTS("درسته","fa")
             else:
                 TTS("غلطه","fa")
-        else:
+        elif iinput=="خروج":
             break
+        else:
+            TTS("دوباره بگویید","fa")
+            continue
+reverse_True_and_False()
