@@ -6,7 +6,7 @@ def find_singer():
     list_songs_and_singers=[[["AronAfshar_1.mp3"],"آرون افشار"],[["HamedBahram_1.mp3"],"حامد بهرام"],[["BehnamBani_1.mp3"],"بهنام یانی"]]
     while True:   
         list_artist=random.choice(list_songs_and_singers)
-        MusicPlay(random.choice(list_artists[0])()30)
+        MusicPlay(random.choice(list_artists[0])+"()30")
         Input=CompleteVoiceAnalyse()
         if Input!=list_artists[1]:
             TTS("اشتباه بود","fa")
