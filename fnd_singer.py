@@ -3,12 +3,12 @@ def find_singer():
     #you should put the list of singers and their songs here
     #it should be a 2-D list and like the below sentence
     #[[song name.mp3,singer]]
-    list_songs_and_singers=[]
+    list_songs_and_singers=[[["AronAfshar_1.mp3"],"آرون افشار"],[["HamedBahram_1.mp3"],"حامد بهرام"],[["BehnamBani_1.mp3"],"بهنام یانی"]]
     while True:   
-        Index=random.randint(0,len(list_songs_and_singers)-1)
-        MusicPlay(list_songs_and_singers[Index][0]()30)
+        list_artist=random.choice(list_songs_and_singers)
+        MusicPlay(random.choice(list_artists[0])()30)
         Input=CompleteVoiceAnalyse()
-        if Input!=list_songs_and_singers[Index][1]:
+        if Input!=list_artists[1]:
             TTS("اشتباه بود","fa")
         elif Input=="بیرون":
             break
